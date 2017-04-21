@@ -150,14 +150,14 @@ func copyCNOtoC(mqcno *C.MQCNO, gocno *MQCNO) {
 		mqcno.SecurityParmsPtr = nil
 	}
 
-	mqcno.CCDTUrlOffset = 0
-	if len(gocno.CCDTUrl) != 0 {
-		mqcno.CCDTUrlPtr = C.PMQCHAR(unsafe.Pointer(C.CString(gocno.CCDTUrl)))
-		mqcno.CCDTUrlLength = C.MQLONG(len(gocno.CCDTUrl))
-	} else {
-		mqcno.CCDTUrlPtr = nil
-		mqcno.CCDTUrlLength = 0
-	}
+//	mqcno.CCDTUrlOffset = 0
+//	if len(gocno.CCDTUrl) != 0 {
+//		mqcno.CCDTUrlPtr = C.PMQCHAR(unsafe.Pointer(C.CString(gocno.CCDTUrl)))
+//		mqcno.CCDTUrlLength = C.MQLONG(len(gocno.CCDTUrl))
+//	} else {
+//		mqcno.CCDTUrlPtr = nil
+//		mqcno.CCDTUrlLength = 0
+//	}
 	return
 }
 
@@ -183,8 +183,8 @@ func copyCNOfromC(mqcno *C.MQCNO, gocno *MQCNO) {
 		C.free(unsafe.Pointer(mqcno.SSLConfigPtr))
 	}
 
-	if mqcno.CCDTUrlPtr != nil {
-		C.free(unsafe.Pointer(mqcno.CCDTUrlPtr))
-	}
+//	if mqcno.CCDTUrlPtr != nil {
+//		C.free(unsafe.Pointer(mqcno.CCDTUrlPtr))
+//	}
 	return
 }
