@@ -70,7 +70,7 @@ matching pairs.
 func copySCOtoC(mqsco *C.MQSCO, gosco *MQSCO) {
 
 	setMQIString((*C.char)(&mqsco.StrucId[0]), "SCO ", 4)
-	mqsco.Version = C.MQSCO_VERSION_5
+	mqsco.Version = C.MQSCO_VERSION_4
 	setMQIString((*C.char)(&mqsco.KeyRepository[0]), gosco.KeyRepository, C.MQ_SSL_KEY_REPOSITORY_LENGTH)
 	setMQIString((*C.char)(&mqsco.CryptoHardware[0]), gosco.CryptoHardware, C.MQ_SSL_CRYPTO_HARDWARE_LENGTH)
 	mqsco.AuthInfoRecCount = 0
