@@ -112,7 +112,7 @@ func copyCNOtoC(mqcno *C.MQCNO, gocno *MQCNO) {
 	mqcno.SSLConfigOffset = 0
 	if gocno.SSLConfig != nil {
 		gosco := gocno.SSLConfig
-		mqsco = C.PMQSCO(C.malloc(C.MQSCO_LENGTH_5))
+		mqsco = C.PMQSCO(C.malloc(C.MQSCO_LENGTH_4))
 		copySCOtoC(mqsco, gosco)
 		mqcno.SSLConfigPtr = C.PMQSCO(mqsco)
 		if gocno.Version < 4 {
