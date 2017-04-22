@@ -189,7 +189,7 @@ func copyCDtoC(mqcd *C.MQCD, gocd *MQCD) {
 	mqcd.BatchDataLimit = 5000
 	mqcd.UseDLQ = C.MQUSEDLQ_YES
 	mqcd.DefReconnect = C.MQLONG(gocd.DefReconnect)
-	setMQIString((*C.char)(&mqcd.CertificateLabel[0]), gocd.CertificateLabel, C.MQ_CERT_LABEL_LENGTH)
+//	setMQIString((*C.char)(&mqcd.CertificateLabel[0]), gocd.CertificateLabel, C.MQ_CERT_LABEL_LENGTH)
 
 	return
 }

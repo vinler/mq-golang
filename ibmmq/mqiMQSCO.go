@@ -86,7 +86,7 @@ func copySCOtoC(mqsco *C.MQSCO, gosco *MQSCO) {
 		mqsco.EncryptionPolicySuiteB[i] = C.MQLONG(gosco.EncryptionPolicySuiteB[i])
 	}
 	mqsco.CertificateValPolicy = C.MQLONG(gosco.CertificateValPolicy)
-	setMQIString((*C.char)(&mqsco.CertificateLabel[0]), gosco.CertificateLabel, C.MQ_CERT_LABEL_LENGTH)
+//	setMQIString((*C.char)(&mqsco.CertificateLabel[0]), gosco.CertificateLabel, C.MQ_CERT_LABEL_LENGTH)
 
 	return
 }
