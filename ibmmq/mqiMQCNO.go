@@ -99,7 +99,7 @@ func copyCNOtoC(mqcno *C.MQCNO, gocno *MQCNO) {
 	mqcno.ClientConnOffset = 0
 	if gocno.ClientConn != nil {
 		gocd := gocno.ClientConn
-		mqcd = C.PMQCD(C.malloc(C.MQCD_LENGTH_11))
+		mqcd = C.PMQCD(C.malloc(C.MQCD_LENGTH_10))
 		copyCDtoC(mqcd, gocd)
 		mqcno.ClientConnPtr = C.MQPTR(mqcd)
 		if gocno.Version < 2 {
